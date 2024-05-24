@@ -37,17 +37,58 @@ def suma(operando_a: int, operando_b: int)-> int:
     return operando_a + operando_b
 #---------------------------------------------------------------------
 def resta(operando_a: int, operando_b: int)-> int:
+    """Resta el segundo valor ingresado al primero
+
+    Args:
+        operando_a (int): primer valor ingresado
+        operando_b (int): segundo valor ingresado
+
+    Returns:
+        int: devuelve la resta del primer valor al segundo
+    """
     return operando_a - operando_b
 #---------------------------------------------------------------------
 def multiplicacion(operando_a: int, operando_b: int)-> int:
+    """multiplica los dos valores ingresados
+
+    Args:
+        operando_a (int): primer valor ingresado
+        operando_b (int): segundo valor ingresado
+
+    Returns:
+        int: devuelve la multiplicacion de ambos valores
+    """
     return operando_a * operando_b
 #---------------------------------------------------------------------
 def division(operando_a: int, operando_b: int)-> int:
+    """divide los dos valores ingresados
+
+    Args:
+        operando_a (int): primer valor ingresado
+        operando_b (int): segundo valor ingresado
+
+    Raises:
+        ZeroDivisionError: si uno de los dos valores ingresados es 0, no permite realizar la operacion
+
+    Returns:
+        int: Devuelve la division del primer numero ingresado por el segundo
+    """
     if operando_a == 0 or operando_b == 0:
         raise ZeroDivisionError("No se puede dividir por 0")
     return operando_a / operando_b
 #---------------------------------------------------------------------
 def factorial(operando: int)-> int:
+    """Permite calcular el factorial del valor ingresado
+
+    Args:
+        operando (int): valor del cual se quiere obtener el factorial
+
+    Raises:
+        ValueError: si el valor ingresado no es un numero natural no permite al usuario hacer el factorial
+
+    Returns:
+        int: devuelve el factorial del valor ingresado
+    """
     fact = 1
     if operando < 0 :
         raise ValueError("El factorial es solo para numeros naturales")
@@ -59,9 +100,13 @@ def factorial(operando: int)-> int:
     
 #---------------------------------------------------------------------
 def limpiar_pantalla():
+    """Limpia la pantalla
+    """
     system("cls")
 #---------------------------------------------------------------------
 def pausar():
+    """Pausa la animacion entre operaciones
+    """
     system("pause")
 #---------------------------------------------------------------------
 def menu(a:int,b:int)-> str:
@@ -87,7 +132,15 @@ def menu(a:int,b:int)-> str:
     opcion = input("Ingrese opcion: ")
     return opcion
 #---------------------------------------------------------------------
-def desea_cerrar_programa(mensaje: str)-> bool:
+def desea_cerrar_programa(mensaje: str)-> str:
+    """Le permite al usuario cerrar el programa
+
+    Args:
+        mensaje (str): pregunta al usuario si desea cerrar el programa
+
+    Returns:
+        str: si el usuario ingresa si, cierra el programa. Si ingresa no, continua.
+    """
     rta = input(mensaje).lower()
     return rta == "si"
 
